@@ -9,7 +9,8 @@ curl "http://localhost:4741/products/" \
       "name": "'"${NAME}"'",
       "strength": "'"${STR}"'",
       "quantity": "'"${QTY}"'",
-      "unit": "'"${UNIT}"'"
+      "unit": "'"${UNIT}"'",
+      "user": "'"${USER}"'"
     }
   }'
 
