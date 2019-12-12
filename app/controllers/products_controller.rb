@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ProductsController < OpenReadController
-  before_action :set_product, only: [:show, :update, :destroy]
+  before_action :set_product, only: %i[show update destroy]
 
   # GET /products
   def index
@@ -41,13 +43,15 @@ class ProductsController < OpenReadController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = current_user.products.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def product_params
-      params.require(:product).permit(:name, :strength, :quantity, :unit, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = current_user.products.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def product_params
+    params.require(:product).permit(:name, :strength, :quantity, :unit,
+                                    :user_id)
+  end
 end
