@@ -1,16 +1,16 @@
-class ProductsController < ProtectedController
+class ProductsController < OpenReadController
   before_action :set_product, only: [:show, :update, :destroy]
 
   # GET /products
   def index
-    @products = Product.products.all
+    @products = Product.all
 
     render json: @products
   end
 
   # GET /products/1
   def show
-    render json: @product
+    render json: Product.find(params[:id])
   end
 
   # POST /products
@@ -36,6 +36,8 @@ class ProductsController < ProtectedController
   # DELETE /products/1
   def destroy
     @product.destroy
+
+    head :no_content
   end
 
   private
