@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  before_action :set_ingredient, only: [:show, :update, :destroy]
+  before_action :set_ingredient, only: [:update, :destroy]
 
   # GET /ingredients
   def index
@@ -10,7 +10,7 @@ class IngredientsController < ApplicationController
 
   # GET /ingredients/1
   def show
-    render json: @ingredient
+    render json: Product.find_by(name: params[:id])
   end
 
   # POST /ingredients
@@ -46,6 +46,6 @@ class IngredientsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def ingredient_params
-      params.require(:ingredient).permit(:name, :strength, :unit, :form)
+      params.require(:ingredient).permit(:name, :unit, :form)
     end
 end
