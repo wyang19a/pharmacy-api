@@ -12,7 +12,7 @@ class ProductsController < OpenReadController
 
   # GET /products/1
   def show
-    render json: Product.find_by(name: params[:id])
+    render json: Product.find(params[:id])
   end
 
   # POST /products
@@ -38,7 +38,6 @@ class ProductsController < OpenReadController
   # DELETE /products/1
   def destroy
     @product.destroy
-
     head :no_content
   end
 
@@ -55,6 +54,3 @@ class ProductsController < OpenReadController
                                     :user_id)
   end
 end
-
-
-# c

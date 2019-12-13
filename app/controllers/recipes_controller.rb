@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :update, :destroy]
+  before_action :set_recipe, only: [:update, :destroy]
 
   # GET /recipes
   def index
@@ -10,7 +12,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1
   def show
-    render json: @recipe
+    render json: Recipe.find(params[:id])
   end
 
   # POST /recipes
@@ -36,6 +38,7 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1
   def destroy
     @recipe.destroy
+    head :no_content
   end
 
   private
