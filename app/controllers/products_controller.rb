@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProductsController < OpenReadController
-  before_action :set_product, only: %i[show update destroy]
+  before_action :set_product, only: %i[update destroy]
 
   # GET /products
   def index
@@ -12,7 +12,7 @@ class ProductsController < OpenReadController
 
   # GET /products/1
   def show
-    render json: Product.find(params[:id])
+    render json: Product.find_by(name: params[:id])
   end
 
   # POST /products
@@ -55,3 +55,6 @@ class ProductsController < OpenReadController
                                     :user_id)
   end
 end
+
+
+# c

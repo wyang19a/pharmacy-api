@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id, :name, :strength, :quantity, :unit, :user_id, :editable
+  attributes :id, :recipes, :name, :strength, :quantity, :ingredients, :unit, :editable
+  belongs_to :user
+  has_many :ingredients, through: :recipe
 
   def editable
     scope == object.user
