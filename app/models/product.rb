@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class Product < ApplicationRecord
-  belongs_to :user
+  has_many :ingredients,
+           inverse_of: :products
   has_many :recipes, dependent: :destroy
   has_many :ingredients, through: :recipes
+  belongs_to :user
 end
