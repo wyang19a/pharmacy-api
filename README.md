@@ -1,12 +1,11 @@
 # rails project
 
 ### Client repo
-https://github.com/wyang19a/pharmacy-client  
+https://github.com/wyang19a/pharmacy-client
 Client for the pharmacy formulary app.
 
 ### Deployed sites
-Client: https://wyang19a.github.io/pharmacy-client/
-
+Client: https://wyang19a.github.io/pharmacy-client/  
 API: https://safe-brushlands-23264.herokuapp.com/
 
 ### ERD
