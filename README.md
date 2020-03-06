@@ -1,8 +1,8 @@
 # CompoundingTracker API
 
 ### Deployed sites
-- [Client Repo](https://github.com/wyang19a/pharmacy-client)
-- [Deployed Client](https://wyang19a.github.io/pharmacy-client/)
+- [Client Repo](https://github.com/wyang19a/compoundingTracker.git)
+- [Deployed Client](https://wyang19a.github.io/compoundingTracker/)
 - [Deployed API](https://safe-brushlands-23264.herokuapp.com/)
 
 
