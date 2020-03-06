@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProductsController < OpenReadController
-  before_action :set_product, only: %i[update]
+  before_action :set_product, only: %i[update destroy]
 
   # GET /products
   def index
@@ -37,7 +37,7 @@ class ProductsController < OpenReadController
 
   # DELETE /products/1
   def destroy
-    Product.find(params[:id]).destroy
+    @product.destroy
     head :no_content
   end
 

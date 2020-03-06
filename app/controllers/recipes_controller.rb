@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RecipesController < OpenReadController
-  before_action :set_recipe, only: %i[update]
+  before_action :set_recipe, only: %i[update destroy]
 
   # GET /recipes
   def index
@@ -37,7 +37,7 @@ class RecipesController < OpenReadController
 
   # DELETE /recipes/1
   def destroy
-    Recipe.find(params[:id]).destroy
+    @recipe.destroy
     head :no_content
   end
 
